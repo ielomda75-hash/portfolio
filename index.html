@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ِAhmed Emad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffdfc; --surface:#f6f1f0; --ink:#1c1416; --muted:#6b5d60; --line:#e6dcda; --accent:#ff0033; --on-accent:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#171012; --surface:#241a1d; --ink:#f7eeee; --muted:#b9a8ab; --line:#3a2c30;}
+}
+:root[data-theme="dark"]{--bg:#171012; --surface:#241a1d; --ink:#f7eeee; --muted:#b9a8ab; --line:#3a2c30;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cairo",system-ui,"Segoe UI",Tahoma,sans-serif;line-height:1.8;font-size:17px}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;padding:10px 24px;border-radius:999px;font-weight:800;border:2px solid var(--accent);transition:background .2s,color .2s}
+.btn.fill{background:var(--accent);color:var(--on-accent)}
+.btn.fill:hover{filter:brightness(.92)}
+.btn.line:hover{background:var(--accent);color:var(--on-accent)}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font-weight:900;font-size:20px}
+nav{display:flex;gap:22px;font-weight:600}
+nav a{color:var(--muted)} nav a:hover{color:var(--ink)}
+@media (max-width:640px){nav{display:none}}
+
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:72px 0 56px}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.15;margin:0 0 16px;font-weight:900}
+.hero p{color:var(--muted);max-width:34ch;margin:0 0 28px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
+.portrait{aspect-ratio:4/5;border-radius:28px;background:var(--accent);position:relative;overflow:hidden}
+.portrait::after{content:none}
+.stats{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}
+.stats b{display:block;font-size:34px;font-weight:900;line-height:1.2;color:var(--accent)}
+.stats span{color:var(--muted);font-size:15px}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:40px}.portrait{max-width:320px}}
+
+.socials{display:flex;gap:10px;flex-wrap:wrap;padding:18px 0;border-block:1px solid var(--line)}
+.socials a{padding:4px 16px;border-radius:999px;background:var(--surface);font-weight:600;font-size:15px}
+.socials a:hover{background:var(--accent);color:var(--on-accent)}
+
+section{padding:64px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
+h2{font-size:clamp(28px,4vw,40px);margin:0;font-weight:900;line-height:1.3}
+.more{color:var(--accent);font-weight:800}
+
+.videos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.video a{display:block}
+.thumb{aspect-ratio:16/9;border-radius:16px;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;margin-bottom:12px;transition:border-color .2s}
+.thumb::before{content:"";width:0;height:0;border-block:12px solid transparent;border-inline-start:20px solid var(--accent);transform:scaleX(-1)}
+.video a:hover .thumb{border-color:var(--accent)}
+.video h3{margin:0;font-size:18px;line-height:1.5}
+.video time{color:var(--muted);font-size:14px}
+@media (max-width:760px){.videos{grid-template-columns:1fr}}
+
+.course{background:var(--accent);color:var(--on-accent);border-radius:28px;padding:48px;display:grid;grid-template-columns:1.4fr 1fr;gap:32px;align-items:center}
+.course h2{margin-bottom:8px}
+.course p{margin:0 0 24px;max-width:48ch}
+.course .btn{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent)}
+.course .tag{font-weight:800;margin-bottom:8px}
+.course .box{aspect-ratio:16/10;border-radius:20px;border:2px solid rgba(255,255,255,.7);display:grid;place-items:center;font-weight:800}
+@media (max-width:760px){.course{grid-template-columns:1fr;padding:32px 24px}}
+
+.timeline{list-style:none;margin:0;padding:0;border-inline-start:3px solid var(--line);margin-inline-start:8px}
+.timeline li{position:relative;padding:0 28px 36px 0}
+.timeline li::before{content:"";position:absolute;inset-inline-start:-11px;top:10px;width:19px;height:19px;border-radius:50%;background:var(--bg);border:4px solid var(--accent)}
+.timeline li{padding-inline-start:28px;padding-inline-end:0}
+.timeline .y{color:var(--accent);font-weight:900;font-size:15px}
+.timeline h3{margin:0 0 4px;font-size:22px}
+.timeline p{margin:0;color:var(--muted);max-width:62ch}
+
+.contact{text-align:center;background:var(--surface);border-radius:28px;padding:56px 24px}
+.contact p{color:var(--muted);margin:8px 0 24px}
+
+footer{padding:40px 0;color:var(--muted);font-size:15px}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top">Dr. Ahmed Emad</a>
+    <nav aria-label="القائمة الرئيسية">
+      <a href="#top">الرئيسية</a><a href="#videos">الفيديوهات</a><a href="#courses">الكورسات</a><a href="#contact">تواصل معي</a>
+    </nav>
+    <a class="btn fill" href="#">اشترك</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <h1>أهلًا، أنا د. أحمد عماد</h1>
+        <p>بعمل محتوى تعليمي بالعربي عن مجالك. كل حاجة بنشرها بجربها بنفسي الأول.</p>
+        <div class="acts">
+          <a class="btn fill" href="#videos">شوف أحدث الفيديوهات</a>
+          <a class="btn line" href="#courses">الكورسات</a>
+        </div>
+        <!-- <div class="stats">
+          <div><b>1M+</b><span>متابع على كل المنصات</span></div>
+          <div><b>200+</b><span>فيديو تعليمي</span></div>
+          <div><b>2026</b><span>أول فيديو</span></div>
+        </div> -->
+      </div>
+      <div class="portrait" role="img" aria-label="مكان صورتك">
+        <img src="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" alt="د. أحمد عماد" style="width:100%;height:100%;object-fit:cover">
+      </div>
+    </div>
+    <div class="socials">
+      <a href="#">يوتيوب</a><a href="#">إنستجرام</a><a href="#">فيسبوك</a><a href="#">إكس</a><a href="#">تيليجرام</a>
+    </div>
+  </div>
+
+  <section id="videos">
+    <div class="wrap">
+      <div class="head"><h2>أحدث الفيديوهات</h2><a class="more" href="#">كل الفيديوهات</a></div>
+      <ul class="videos">
+        <li class="video"><a href="#"><div class="thumb"></div><h3>عنوان الفيديو الأول</h3><time>١٨ سبتمبر ٢٠٢٦</time></a></li>
+        <li class="video"><a href="#"><div class="thumb"></div><h3>عنوان الفيديو التاني</h3><time>٣١ أغسطس ٢٠٢٦</time></a></li>
+        <li class="video"><a href="#"><div class="thumb"></div><h3>عنوان الفيديو التالت</h3><time>٢١ أغسطس ٢٠٢٦</time></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="courses" style="padding-top:0">
+    <div class="wrap">
+      <div class="course">
+        <div>
+          <div class="tag">الكورس المدفوع</div>
+          <h2>اسم الكورس</h2>
+          <p>وصف قصير بيقول إيه اللي هيتعلمه الطالب في الكورس وإزاي هيفيده.</p>
+          <a class="btn" href="#">تفاصيل الكورس</a>
+        </div>
+        <div class="box">صورة الكورس</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>رحلتي من البداية إلى الآن</h2></div>
+      <ol class="timeline">
+        <li><div class="y">2012</div><h3>البداية</h3><p>اكتب هنا قصة بدايتك في سطرين أو تلاتة.</p></li>
+        <li><div class="y">2017</div><h3>نقطة التحول</h3><p>اكتب هنا القرار أو الحدث اللي غيّر مسارك.</p></li>
+        <li><div class="y">2022</div><h3>التوسّع</h3><p>اكتب هنا إزاي المحتوى والقناة كبروا.</p></li>
+        <li><div class="y">2026</div><h3>النهارده</h3><p>اكتب هنا هدفك الحالي وإيه الجاي.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-top:0">
+    <div class="wrap">
+      <div class="contact">
+        <h2>عندك فكرة تعاون أو سؤال؟</h2>
+        <p>للتعاون والرعايات والاستفسارات، ابعتلي وهرد عليك في أقرب وقت.</p>
+        <a class="btn fill" href="drahmedemad8@gmail.com">تواصل معي</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span>© 2026 د. أحمد عماد. جميع الحقوق محفوظة.</span>
+    <span>drahmedemad8@gmail.com</span>
+  </div>
+</footer>
+</body>
+</html>
