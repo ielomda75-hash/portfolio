@@ -119,15 +119,54 @@ nav a:hover{color:var(--ink)}
   .portrait{margin:0 auto}
 }
 
-.socials{display:flex;gap:10px;flex-wrap:wrap;padding:18px 0;border-block:1px solid var(--line)}
-.socials a{
-  padding:4px 60px;
-  border-radius:999px;
-  background:var(--surface);
-  font-weight:600;
-  font-size:15px
+/* ===== زر روابطنا ===== */
+.socials{
+  display:flex;
+  justify-content:center;
+  padding:20px 0;
+  border-block:1px solid var(--line)
 }
-.socials a:hover{background:var(--accent);color:var(--on-accent)}
+.links-btn{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  width:100%;
+  max-width:420px;
+  padding:12px 16px;
+  border-radius:18px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .2s,border-color .2s,box-shadow .2s,background .2s
+}
+.lb-icon{
+  flex:none;
+  width:42px;height:42px;
+  border-radius:12px;
+  background:var(--accent);
+  color:var(--on-accent);
+  display:grid;
+  place-items:center;
+  transition:transform .25s
+}
+.lb-text{flex:1;display:flex;flex-direction:column;line-height:1.4;text-align:start}
+.lb-text b{font-size:17px;font-weight:800}
+.lb-text small{color:var(--muted);font-size:13px;font-weight:600}
+.lb-arrow{flex:none;color:var(--muted);transition:transform .25s,color .25s}
+
+.links-btn:hover{
+  transform:translateY(-2px);
+  border-color:var(--accent);
+  box-shadow:0 8px 22px rgba(255,0,51,.16)
+}
+.links-btn:hover .lb-icon{transform:rotate(-8deg) scale(1.06)}
+.links-btn:hover .lb-arrow{color:var(--accent);transform:translate(-3px,-3px)}
+.links-btn:active{transform:translateY(0) scale(.98);box-shadow:none}
+.links-btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.links-btn.is-opening{pointer-events:none;border-color:var(--accent)}
+.links-btn.is-opening .lb-arrow{color:var(--accent);animation:nudge .6s ease-in-out infinite alternate}
+@keyframes nudge{to{transform:translate(-4px,-4px)}}
 
 section{padding:64px 0}
 .head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
@@ -263,7 +302,11 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .theme-btn:hover{border-color:var(--accent)}
 .bar .end{display:flex;align-items:center;gap:10px}
 
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .links-btn,.lb-icon,.lb-arrow{transition:none!important;animation:none!important}
+}
 </style>
 </head>
 <body>
@@ -299,7 +342,16 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
     </div>
     <div class="socials">
-      <a href="https://dr-omda.github.io/1/" target="_blank" rel="noopener">Our Links</a>
+      <a class="links-btn" id="linksBtn" href="https://dr-omda.github.io/1/" target="_blank" rel="noopener noreferrer" aria-label="Our Links - يفتح في نافذة جديدة">
+        <span class="lb-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
+        </span>
+        <span class="lb-text">
+          <b>Our Links</b>
+          <small id="linksHint">كل روابطنا في مكان واحد</small>
+        </span>
+        <svg class="lb-arrow" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+      </a>
     </div>
   </div>
 
@@ -396,6 +448,23 @@ footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     var next = current() === 'dark' ? 'light' : 'dark';
     apply(next);
     try { localStorage.setItem('theme', next); } catch(e){}
+  });
+})();
+
+/* زر روابطنا: تأثير عند الضغط ومنع الضغط المتكرر */
+(function(){
+  var link = document.getElementById('linksBtn');
+  var hint = document.getElementById('linksHint');
+  if(!link || !hint) return;
+  var original = hint.textContent;
+  link.addEventListener('click', function(){
+    if(link.classList.contains('is-opening')) return;
+    link.classList.add('is-opening');
+    hint.textContent = 'جاري فتح الصفحة…';
+    setTimeout(function(){
+      link.classList.remove('is-opening');
+      hint.textContent = original;
+    }, 1500);
   });
 })();
 </script>
