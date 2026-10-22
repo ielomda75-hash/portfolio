@@ -1,50 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ِAhmed Emad</title>
+<title>Ahmed Emad</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
-<link rel="icon" href="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" type="image/jpeg">
+<link rel="icon" href="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" type="image/png">
 
 <style>
 :root{
   --bg:#fffdfc;
-  --surface:#f6f1f0; 
-  --ink:#1c1416; 
-  --muted:#6b5d60; 
-  --line:#e6dcda; 
-  --accent:#ff0033; 
+  --surface:#f6f1f0;
+  --ink:#1c1416;
+  --muted:#6b5d60;
+  --line:#e6dcda;
+  --accent:#ff0033;
   --on-accent:#fff;
-  box-sizing:border-box; 
-  padding-top:env(safe-area-inset-top,0px); 
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"])
-  {
-    --bg:#171012; 
-    --surface:#241a1d; 
-    --ink:#f7eeee; 
-    --muted:#b9a8ab; 
+  :root:not([data-theme="light"]){
+    --bg:#171012;
+    --surface:#241a1d;
+    --ink:#f7eeee;
+    --muted:#b9a8ab;
     --line:#3a2c30;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#171012; 
-  --surface:#241a1d; 
-  --ink:#f7eeee; 
-  --muted:#b9a8ab; 
+  --bg:#171012;
+  --surface:#241a1d;
+  --ink:#f7eeee;
+  --muted:#b9a8ab;
   --line:#3a2c30;
 }
 
-html{
-  scroll-padding-top:env(safe-area-inset-top,0px);
-  scroll-behavior:smooth
-}
-
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box}
 body{
   margin:0;
@@ -54,34 +49,11 @@ body{
   line-height:1.8;
   font-size:17px
 }
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
-a{
-  color:inherit;
-  text-decoration:none
-}.
-
-<!-- ...existing code... -->
-<div class="portrait">
-  <img src="2.jpeg" alt="د. أحمد عماد">
-</div>
-<!-- ...existing code... --><!-- ...existing code... -->
-<div class="portrait">
-  <img src="2.jpeg" alt="د. أحمد عماد">
-</div>
-<!-- ...existing code... --><!-- ...existing code... -->
-<div class="portrait">
-  <img src="2.jpeg" alt="د. أحمد عماد">
-</div>
-<!-- ...existing code... -->a:focus-visible,button:focus-visible{
-  outline:3px solid var(--accent);
-  outline-offset:3px
-}
-
-.wrap{
-  max-width:1080px;
-  margin:0 auto;
-  padding:0 20px
-}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
 .btn{
   display:inline-block;
@@ -91,28 +63,17 @@ a{
   border:2px solid var(--accent);
   transition:background .2s,color .2s
 }
-
-.btn.fill{
-  background:var(--accent);
-  color:var(--on-accent)
-}
-
-.btn.fill:hover{
-  filter:brightness(.92)
-}
-
-.btn.line:hover{
-  background:var(--accent);
-  color:var(--on-accent)
-}
+.btn.fill{background:var(--accent);color:var(--on-accent)}
+.btn.fill:hover{filter:brightness(.92)}
+.btn.line:hover{background:var(--accent);color:var(--on-accent)}
 
 header{
   position:sticky;
   top:env(safe-area-inset-top,0px);
   z-index:20;
-  background:var(--bg);border-bottom:1px solid var(--line)
+  background:var(--bg);
+  border-bottom:1px solid var(--line)
 }
-
 body::before{
   content:"";
   position:fixed;
@@ -121,37 +82,12 @@ body::before{
   background:var(--bg);
   z-index:30
 }
-
-.bar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  height:64px
-}
-
-.logo{
-  font-weight:900;
-  font-size:20px
-}
-
-nav{
-  display:flex;
-  gap:22px;
-  font-weight:600
-}
-
-nav a{
-  color:var(--muted)
-}
-
-nav a:hover{
-  color:var(--ink)
-}
-
-@media (max-width:640px){
-  nav{display:none}
-}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font-weight:900;font-size:20px}
+nav{display:flex;gap:22px;font-weight:600}
+nav a{color:var(--muted)}
+nav a:hover{color:var(--ink)}
+@media (max-width:640px){nav{display:none}}
 
 .hero{
   display:grid;
@@ -160,25 +96,9 @@ nav a:hover{
   align-items:center;
   padding:72px 0 56px
 }
-
-.hero h1{
-  font-size:clamp(38px,6vw,68px);
-  line-height:1.15;
-  margin:0 0 16px;
-  font-weight:900
-}
-
-.hero p{
-  color:var(--muted);
-  max-width:34ch;
-  margin:0 0 28px
-}
-
-.hero .acts{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap
-}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.15;margin:0 0 16px;font-weight:900}
+.hero p{color:var(--muted);max-width:34ch;margin:0 0 28px}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap}
 
 .portrait{
   aspect-ratio:4/5;
@@ -187,80 +107,32 @@ nav a:hover{
   position:relative;
   overflow:hidden
 }
+.portrait img{width:100%;height:100%;object-fit:cover}
 
-.portrait::after{
-  content:none
-}
-
-.stats{
-  display:flex;
-  gap:40px;
-  margin-top:40px;
-  flex-wrap:wrap
-}
-
-.stats b{
-  display:block;
-  font-size:34px;
-  font-weight:900;
-  line-height:1.2;
-  color:var(--accent)
-}
-
-.stats span{
-  color:var(--muted);
-  font-size:15px
-}
+.stats{display:flex;gap:40px;margin-top:40px;flex-wrap:wrap}
+.stats b{display:block;font-size:34px;font-weight:900;line-height:1.2;color:var(--accent)}
+.stats span{color:var(--muted);font-size:15px}
 
 @media (max-width:760px){
-  .hero{
-    grid-template-columns:1fr;
-    padding-top:40px}
-    .portrait{max-width:320px}
-  }
+  .hero{grid-template-columns:1fr;padding-top:40px}
+  .portrait{max-width:320px}
+  .portrait{margin:0 auto}
+}
 
-.socials{
-  display:flex;
-  gap:10px;flex-wrap:wrap;
-  padding:18px 0;
-  border-block:1px solid var(--line)}
-
+.socials{display:flex;gap:10px;flex-wrap:wrap;padding:18px 0;border-block:1px solid var(--line)}
 .socials a{
-  padding:4px 160px;
+  padding:4px 60px;
   border-radius:999px;
   background:var(--surface);
   font-weight:600;
   font-size:15px
 }
+.socials a:hover{background:var(--accent);color:var(--on-accent)}
 
-.socials a:hover{
-  background:var(--accent);
-  color:var(--on-accent)
-}
-
-section{
-  padding:64px 0
-}
-
-.head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:16px;
-  margin-bottom:28px
-}
-
-h2
-{font-size:clamp(28px,4vw,40px);
-  margin:0;
-  font-weight:900;
-  line-height:1.3
-}
-
-.more{
-  color:var(--accent);
-  font-weight:800
-}
+section{padding:64px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px}
+h2{font-size:clamp(28px,4vw,40px);margin:0;font-weight:900;line-height:1.3}
+.more{color:var(--accent);font-weight:800}
 
 .videos{
   list-style:none;
@@ -270,51 +142,58 @@ h2
   grid-template-columns:repeat(3,1fr);
   gap:20px
 }
+.video a{display:block}
 
-.video a{
-  display:block
-}
-
+/* الصورة المصغرة + زر التشغيل فوقها */
 .thumb{
+  position:relative;
+  overflow:hidden;
   aspect-ratio:16/9;
   border-radius:16px;
   background:var(--surface);
   border:1px solid var(--line);
-  display:grid;
-  place-items:center;
   margin-bottom:12px;
   transition:border-color .2s
 }
 
+.thumb img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover
+}
+
 .thumb::before{
   content:"";
-  width:0;
-  height:0;
-  border-block:12px solid transparent;
-  border-inline-start:20px solid var(--accent);
-  transform:scaleX(-1)
+  position:absolute;
+  top:50%;left:50%;
+  width:58px;height:58px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 4px 14px rgba(0,0,0,.3);
+  transform:translate(-50%,-50%);
+  transition:transform .2s;
+  z-index:1
 }
-
-.video a:hover .thumb{
-  border-color:var(--accent)
+.thumb::after{
+  content:"";
+  position:absolute;
+  top:50%;left:50%;
+  width:20px;height:22px;
+  background:#fff;
+  clip-path:polygon(0 0,100% 50%,0 100%);
+  transform:translate(-35%,-50%);
+  z-index:2
 }
+.video a:hover .thumb{border-color:var(--accent)}
+.video a:hover .thumb::before{transform:translate(-50%,-50%) scale(1.1)}
+.video h3{margin:0;font-size:18px;line-height:1.5}
+.video time{color:var(--muted);font-size:14px}
+@media (max-width:760px){.videos{grid-template-columns:1fr}}
 
-.video h3{
-  margin:0;
-  font-size:18px;
-  line-height:1.5
-}
-
-.video time{
-  color:var(--muted);
-  font-size:14px
-}
-
-@media (max-width:760px){
-  .videos{grid-template-columns:1fr}
-}
-
-.course{background:var(--accent);
+.course{
+  background:var(--accent);
   color:var(--on-accent);
   border-radius:28px;
   padding:48px;
@@ -323,115 +202,68 @@ h2
   gap:32px;
   align-items:center
 }
-
-.course h2{
-  margin-bottom:8px
-}
-
-.course p{
-  margin:0 0 24px;
-  max-width:48ch
-}
-
-.course .btn{
-  background:var(--on-accent);
-  color:var(--accent);
-  border-color:var(--on-accent)
-}
-
-.course .tag{
-  font-weight:800;
-  margin-bottom:8px
-}
-
+.course h2{margin-bottom:8px}
+.course p{margin:0 0 24px;max-width:48ch}
+.course .btn{background:var(--on-accent);color:var(--accent);border-color:var(--on-accent)}
+.course .tag{font-weight:800;margin-bottom:8px}
 .course .box{
   aspect-ratio:16/10;
   border-radius:20px;
   border:2px solid rgba(255,255,255,.7);
   display:grid;
   place-items:center;
-  font-weight:800
+  font-weight:800;
+  overflow:hidden
 }
-
-@media (max-width:760px){.course{
-  grid-template-columns:1fr;
-  padding:32px 24px
-}}
+.course .box img{width:100%;height:100%;object-fit:cover}
+@media (max-width:760px){.course{grid-template-columns:1fr;padding:32px 24px}}
 
 .timeline{
   list-style:none;
-  margin:0;
+  margin:0 8px 0 0;
   padding:0;
   border-inline-start:3px solid var(--line);
   margin-inline-start:8px
 }
-
-.timeline li{
-  position:relative;
-  padding:0 28px 36px 0
-}
-
+.timeline li{position:relative;padding:0 28px 36px;padding-inline-start:28px;padding-inline-end:0}
 .timeline li::before{
   content:"";
   position:absolute;
   inset-inline-start:-11px;
   top:10px;
-  width:19px;
-  height:19px;
+  width:19px;height:19px;
   border-radius:50%;
   background:var(--bg);
   border:4px solid var(--accent)
 }
+.timeline .y{color:var(--accent);font-weight:900;font-size:15px}
+.timeline h3{margin:0 0 4px;font-size:22px}
+.timeline p{margin:0;color:var(--muted);max-width:62ch}
 
-.timeline li{
-  padding-inline-start:28px;
-  padding-inline-end:0
-}
+.contact{text-align:center;background:var(--surface);border-radius:28px;padding:56px 24px}
+.contact p{color:var(--muted);margin:8px 0 24px}
 
-.timeline .y{
-  color:var(--accent);
-  font-weight:900;
-  font-size:15px
-}
+footer{padding:40px 0;color:var(--muted);font-size:15px}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-.timeline h3{
-  margin:0 0 4px;
-  font-size:22px
-}
-
-.timeline p{
-  margin:0;
-  color:var(--muted);
-  max-width:62ch
-}
-
-.contact{
-  text-align:center;
+/* زر الوضع الليلي */
+.theme-btn{
+  width:42px;height:42px;
+  border-radius:50%;
+  border:2px solid var(--line);
   background:var(--surface);
-  border-radius:28px;
-  padding:56px 24px
+  color:var(--ink);
+  font-size:18px;
+  line-height:1;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  transition:border-color .2s
 }
+.theme-btn:hover{border-color:var(--accent)}
+.bar .end{display:flex;align-items:center;gap:10px}
 
-.contact p{
-  color:var(--muted);
-  margin:8px 0 24px
-}
-
-footer{
-  padding:40px 0;
-  color:var(--muted);
-  font-size:15px
-}
-
-footer .row{
-  display:flex;
-  justify-content:space-between;
-  gap:16px;
-  flex-wrap:wrap
-}
-
-@media (prefers-reduced-motion:reduce)
-{html{scroll-behavior:auto}*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
@@ -444,7 +276,10 @@ footer .row{
       <a href="#courses">الكورسات</a>
       <a href="#contact">تواصل معي</a>
     </nav>
-    <a class="btn fill" href="https://www.youtube.com/@dr-omda?sub_confirmation=1" target="_blank">اشترك</a>
+    <div class="end">
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="تبديل الوضع الليلي">🌙</button>
+      <a class="btn fill" href="https://www.youtube.com/@dr-omda?sub_confirmation=1" target="_blank" rel="noopener">اشترك</a>
+    </div>
   </div>
 </header>
 
@@ -453,23 +288,18 @@ footer .row{
     <div class="hero">
       <div>
         <h1>أهلًا، أنا د. أحمد عماد</h1>
-        <p>بعمل محتوى تعليمي بالعربي عن مجالك. كل حاجة بنشرها بجربها بنفسي الأول.</p>
+        <p>Pharmacist and Chimestry Teacher</p>
         <div class="acts">
           <a class="btn fill" href="#videos">شوف أحدث الفيديوهات</a>
           <a class="btn line" href="#courses">الكورسات</a>
         </div>
-        <!-- <div class="stats">
-          <div><b>1M+</b><span>متابع على كل المنصات</span></div>
-          <div><b>200+</b><span>فيديو تعليمي</span></div>
-          <div><b>2026</b><span>أول فيديو</span></div>
-        </div> -->
       </div>
-      <div class="portrait" role="img" aria-label="مكان صورتك">
-        <img src="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" alt="د. أحمد عماد" style="width:100%;height:100%;object-fit:cover">
+      <div class="portrait">
+        <img src="https://surveyheartmedia.s3.ap-south-1.amazonaws.com/files/cd0c33b0594e4433d1a8ca61f11ef7/6a2e019efda9df4edf755681/sh_1781399992362.png" alt="د. أحمد عماد">
       </div>
     </div>
     <div class="socials">
-      <a href="https://dr-omda.github.io/1/" target="_blank">Our Links</a>
+      <a href="https://dr-omda.github.io/1/" target="_blank" rel="noopener">Our Links</a>
     </div>
   </div>
 
@@ -478,34 +308,23 @@ footer .row{
       <div class="head"><h2>أحدث الفيديوهات</h2><a class="more" href="https://www.youtube.com/@dr-omda/videos">كل الفيديوهات</a></div>
       <ul class="videos">
         <li class="video">
-          <a href="https://youtu.be/hOFr4CIgR6A?si=BAMFuiQP6pz3pR43">
-          <div class="thumb">
-            <img src="5.jpeg" width="100%"  alt="">
-          </div><h3>ملخص شرح الباب الاول للصف الثاني الثانوي الأزهري</h3>
-          <!-- <time>١٨ سبتمبر ٢٠٢٦</time> -->
+          <a href="https://youtu.be/hOFr4CIgR6A?si=BAMFuiQP6pz3pR43" target="_blank" rel="noopener">
+            <div class="thumb"><img src="5.jpeg" alt=""></div>
+            <h3>ملخص شرح الباب الاول للصف الثاني الثانوي الأزهري</h3>
           </a>
         </li>
-
         <li class="video">
-          <a href="https://youtu.be/another-video?si=another-link">
-            <div class="thumb">
-              <img src="4.jpeg" width="100%"  alt="">
-            </div>
-            <h3>عنوان الفيديو التاني</h3>
-            <!-- <time>٣١ أغسطس ٢٠٢٦</time> -->
+          <a href="https://youtu.be/Unvbl8ldpDE?si=6wQvy2MLx0UljVya">
+            <div class="thumb"><img src="3.jpeg" alt=""></div>
+            <h3>ملخص شرح الباب الثاني للصف الثاني الثانوي الأزهري</h3>
           </a>
         </li>
-
-        <li class="video">
+        <!-- <li class="video">
           <a href="#">
-            <div class="thumb">
-
-            </div>
+            <div class="thumb"></div>
             <h3>عنوان الفيديو التالت</h3>
-            <!-- <time>٢١ أغسطس ٢٠٢٦</time> -->
           </a>
-        </li>
-
+        </li>  -->
       </ul>
     </div>
   </section>
@@ -517,11 +336,9 @@ footer .row{
           <div class="tag">الكورس المدفوع</div>
           <h2>مراجعة الباب الأول</h2>
           <p>شرح ملخص الباب الأول من الكورس</p>
-          <a class="btn" href="https://youtu.be/YT7nILMaU1Q?si=7yHcUXFq7b9oVpsu">تفاصيل الكورس</a>
+          <a class="btn" href="https://youtu.be/YT7nILMaU1Q?si=7yHcUXFq7b9oVpsu" target="_blank" rel="noopener">تفاصيل الكورس</a>
         </div>
-        <div class="box">
-          <img src="4.png" alt="box" style="width:100%;height:100%;object-fit:cover;border-radius: 15px;">
-        </div>
+        <div class="box"><img src="4.png" alt="الكورس"></div>
       </div>
     </div>
   </section>
@@ -530,10 +347,10 @@ footer .row{
     <div class="wrap">
       <div class="head"><h2>رحلتي من البداية إلى الآن</h2></div>
       <ol class="timeline">
-        <li><div class="y">2012</div><h3>البداية</h3><p>اكتب هنا قصة بدايتك في سطرين أو تلاتة.</p></li>
-        <li><div class="y">2017</div><h3>نقطة التحول</h3><p>اكتب هنا القرار أو الحدث اللي غيّر مسارك.</p></li>
-        <li><div class="y">2022</div><h3>التوسّع</h3><p>اكتب هنا إزاي المحتوى والقناة كبروا.</p></li>
-        <li><div class="y">2026</div><h3>النهارده</h3><p>اكتب هنا هدفك الحالي وإيه الجاي.</p></li>
+        <li><div class="y">2007</div><h3>البداية</h3><p>ولدت في محافظة الشرقيه مدينة الزقازيق في أوائل شهر يوليو من عام 2007</p></li>
+        <li><div class="y">2025</div><h3> دخول الجامعه</h3><p>التحقت بكلية الصيدله قسم Pharm-D </p></li>
+        <li><div class="y">2026</div><h3>العمل</h3><p> بدأت اشرح مادة الكيمياء و العلوم المتكامله للثانويه العامه و الأزهريه و البكالوريا بجانب وجودي في الصيدليات</p></li>
+        <li><div class="y">SOON</div><h3>النهارده</h3><p>شرح Organic chimestry لطلاب الجامعات كليات العلوم و الصيدله</p></li>
       </ol>
     </div>
   </section>
@@ -555,5 +372,32 @@ footer .row{
     <span>drahmedemad8@gmail.com</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeBtn');
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function current(){
+    return root.getAttribute('data-theme') || (mq.matches ? 'dark' : 'light');
+  }
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    btn.setAttribute('aria-label', theme === 'dark' ? 'التبديل للوضع النهاري' : 'التبديل للوضع الليلي');
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem('theme'); } catch(e){}
+  apply(saved === 'dark' || saved === 'light' ? saved : (mq.matches ? 'dark' : 'light'));
+
+  btn.addEventListener('click', function(){
+    var next = current() === 'dark' ? 'light' : 'dark';
+    apply(next);
+    try { localStorage.setItem('theme', next); } catch(e){}
+  });
+})();
+</script>
 </body>
 </html>
